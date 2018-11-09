@@ -1,4 +1,4 @@
-defmodule BackendWeb.BookController do
+defmodule BackendWeb.RoomController do
   use BackendWeb, :controller
 
   def index(conn, _) do
