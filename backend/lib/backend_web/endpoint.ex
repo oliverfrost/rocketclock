@@ -13,7 +13,7 @@ defmodule BackendWeb.Endpoint do
     at: "/",
     from: :backend,
     gzip: false,
-    only: ~w(scripts styles index.html)
+    only: ~w(scripts styles index.html test.html)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
