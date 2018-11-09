@@ -10,9 +10,20 @@ const minutesArrow = document.getElementById('minutes');
 const hoursArrow = document.getElementById('hours');
 
 
-const roomName = document.createTextNode('Stockholm');
-roomNameContainer.appendChild(roomName);
+start();
 
+/**
+ * Main function that starts the app
+ */
+function start() {
+    getMeetingRoomName()
+        .then(r => {
+            const roomName = document.createTextNode(r.room);
+            roomNameContainer.appendChild(roomName);
+        });
+
+    startTimer();
+}
 
 /**
  * Launches timer that shown time in HH:MM format
@@ -36,8 +47,6 @@ function startTimer() {
         moveArrows(h, m, s);
     }, 1000);
 }
-
-startTimer();
 
 function moveArrows(hours, minutes, seconds) {
     moveSecondsArrow(seconds * 6);
@@ -100,5 +109,16 @@ function getDDMMYYYYDate(date) {
         mm = '0' + mm;
     }
 
-    return  `${dd}.${mm}.${yyyy}`
+    return `${dd}.${mm}.${yyyy}`
+}
+
+/**
+ * Fetches room name from the server and sets it on the page
+ *
+ * @returns {Promise<any>}
+ */
+function getMeetingRoomName() {
+    const url = 'http://localhost:4000/api/room';
+
+    return fetch(url).then(r => r.json());
 }
