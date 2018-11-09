@@ -29,8 +29,7 @@ function startTimer() {
 
 
     digitalTimeContainer.innerHTML = h + ':' + m;
-    dateContainer.innerHtml = getPrettyDate(today);
-
+    dateContainer.innerHTML = getPrettyDate(today);
 
     const timer = setTimeout(() => {
         startTimer();
