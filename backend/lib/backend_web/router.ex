@@ -8,7 +8,7 @@ defmodule BackendWeb.Router do
   scope "/api", BackendWeb do
     pipe_through :api
 
-    get "/bookings/:room", BookController, :index
+    get "/bookings/", BookController, :index
     get "/room/", RoomController, :index
   end
 end
