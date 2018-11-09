@@ -113,7 +113,7 @@ function getDDMMYYYYDate(date) {
 }
 
 /**
- * Fetches room name from the server and sets it on the page
+ * Fetches room name from the server
  *
  * @returns {Promise<any>}
  */
