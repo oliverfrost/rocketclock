@@ -103,11 +103,17 @@ var myVinyls = {
     "Jazz": 12
 };
 
+function getBookings() {
+    const url = 'http://localhost:4000/api/bookings';
+
+    return fetch(url).then(r => r.json()).catch(e => 'Undefined Room');
+}
+
 function tick() {
 var myDougnutChart = new Piechart(
     {
         canvas:myCanvas,
-        data:bookings,
+        data:getBookings(),
         colors:["#57d9ff", "#fde23e"],
         doughnutHoleSize:0.8
     }
@@ -115,4 +121,6 @@ var myDougnutChart = new Piechart(
 
 myDougnutChart.draw();
 }
-window.setInterval(tick, 1000);
+
+tick();
+window.setInterval(tick, 5000);
