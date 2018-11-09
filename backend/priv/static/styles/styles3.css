@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#dashboard {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#name {
+    height: 50px;
+    padding: 15px 0 15px 0;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 56px;
+    font-family: "Lucida Sans Unicode";
+    text-transform: uppercase;
+    color: white;
+}
+
+#clock {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 35px;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid red;
+
+    background-color: inherit;
+
+}
+
+#info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#current {
+    width: 100%;
+    color: white;
+    font-size: 24px;
+
+    text-align: left;
+}
+
+#next {
+    width: 100%;
+    color: white;
+    font-size: 24px;
+
+    text-align: right;
+}
+
+.title {
+    display: block;
+    text-transform: uppercase;
+}
+
+.title::after {
+    content: ":";
+}
+
+.meeting {
+    display: block;
+    text-transform: capitalize;
+}
+
+#digital {
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
+
+#time {
+    display: block;
+    justify-content: center;
+    font-size: 48px;
+    text-align: center;
+}
+
+#weekday {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#hours {
+    position: absolute;
+    top: 21%;
+    left: 48.75%;
+
+    height: 120px;
+    width: 2.5%;
+
+    background-color: white;
+    transform-origin: 50% 100%;
+}
+
+#minutes {
+    background: blue;
+    height: 135px;
+    left: 49%;
+    position: absolute;
+    top: 21%;
+    transform-origin: 50% 100%;
+    width: 2%;
+}
+
+#seconds {
+    background: white;
+    height: 135px;
+    position: absolute;
+    left: 49.5%;
+    top: 21%;
+    width: 1%;
+    z-index: 8;
+    transform-origin: 50% 80%;
+}
