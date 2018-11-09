@@ -8,11 +8,13 @@ var Piechart = function(options){
         // ctx.fillStyle = "#cccccc";
         // this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
+        var radius = Math.min(this.canvas.width/2,this.canvas.height/2);
+
         drawPieSlice(
             this.ctx,
             this.canvas.width/2,
             this.canvas.height/2,
-            Math.min(this.canvas.width/2,this.canvas.height/2),
+            radius,
             0,
             360,
             "#333333"
@@ -28,7 +30,6 @@ var Piechart = function(options){
             var from = new Date(booking.from * 1000);
             var to = new Date(booking.to * 1000);
             var hours = to.getHours() - from.getHours();
-            console.log(from.toUTCString() + "" + to.toUTCString());
             var slice_angle = 2 * Math.PI * hours / total_value;
             start_angle = (Math.PI/2) + (2 * Math.PI * (from.getHours() - 7) / total_value);
  
@@ -58,10 +59,32 @@ var Piechart = function(options){
                 2 * Math.PI,
                 "#000000"
             );
+
+
         }
- 
+
+        var date = new Date();
+        var hours = date.getHours();
+		this.ctx.strokeStyle = "black";
+		this.ctx.lineWidth = 2;
+		drawHand((radius*this.options.doughnutHoleSize), hours * 30, this.ctx, this.canvas);
     }
 }
+
+function drawHand(length, angle, ctx, canvas) {
+			ctx.save();
+			ctx.beginPath();
+			ctx.translate(canvas.width/2, canvas.height/2);
+			ctx.rotate(-180 * Math.PI/180); // Correct for top left origin
+			ctx.rotate(angle * Math.PI/180);
+			ctx.moveTo(0, 0);
+			ctx.lineTo(0, length);
+            ctx.lineWidth = 10;
+            ctx.strokeStyle="yellow";
+			ctx.stroke();
+			ctx.closePath();
+			ctx.restore();
+		}
 
 function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
     ctx.fillStyle = color;
@@ -80,6 +103,7 @@ var myVinyls = {
     "Jazz": 12
 };
 
+function tick() {
 var myDougnutChart = new Piechart(
     {
         canvas:myCanvas,
@@ -90,3 +114,5 @@ var myDougnutChart = new Piechart(
 );
 
 myDougnutChart.draw();
+}
+window.setInterval(tick, 1000);
