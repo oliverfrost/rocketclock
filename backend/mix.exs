@@ -36,9 +36,9 @@ defmodule Backend.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
-      # {:google_api_calendar, "~> 0.0.1"},
-      # {:goth, "~> 0.6.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:google_api_calendar, "0.1.0"},
+      {:goth, "0.11.1"}
     ]
   end
 end
