@@ -1,0 +1,143 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+body > * {
+  margin: auto;
+}
+
+svg {
+  width: 256px;
+  height: 256px;
+  text-align:center;
+}
+
+svg > g {
+  transform: translate(128px, 128px);
+}
+
+circle {
+  stroke: white;
+  stroke-width: 2px;
+}
+
+#numbers {
+  transform: translate(0, 6px);
+}
+
+#numbers > text {
+  fill: white;
+  text-anchor: middle;
+}
+
+#ticks > line {
+  stroke: white;
+}
+
+#hands {
+  stroke: white;
+  stroke-width: 4px;
+  transform: rotate(-90deg);
+}
+
+line {
+  animation: handrotation infinite linear;
+}
+
+#hour > line {
+  animation-duration: 86400s;
+}
+
+#minute > line {
+  animation-duration: 3600s;
+}
+
+#second > line {
+  animation-duration: 60s;
+  stroke: red;
+  stroke-width: 2px;
+}
+
+#name {
+    height: 70px;
+    padding: 15px 0 15px 0;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 56px;
+    font-family: "Lucida Sans Unicode";
+    text-transform: uppercase;
+    color: white;
+}
+
+#info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#current {
+    width: 100%;
+    color: white;
+    font-size: 24px;
+
+    text-align: left;
+}
+
+#next {
+    width: 100%;
+    color: white;
+    font-size: 24px;
+
+    text-align: right;
+}
+
+.title {
+    display: block;
+    text-transform: uppercase;
+}
+
+.title::after {
+    content: ":";
+}
+
+.meeting {
+    display: block;
+    text-transform: capitalize;
+}
+
+#digital {
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
+
+#time {
+    display: block;
+    justify-content: center;
+    font-size: 48px;
+    text-align: center;
+}
+
+#weekday {
+    display: block;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+@keyframes handrotation {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
