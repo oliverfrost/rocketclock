@@ -13,17 +13,14 @@ defmodule Backend.Google do
 
 
   def get_events() do
-    room = get_room
-    token = get_token
-    connection = get_connection(token)
-    calendar = get_calendar(connection, room)
-    events = get_events(connection, calendar)
+    connection = get_connection(get_token())
+    calendar = get_calendar(connection, get_room())
+    get_events(connection, calendar)
   end
 
   def get_token() do
     {:ok, map} = Goth.Token.for_scope("https://www.googleapis.com/auth/calendar")
-    {:ok, token} = Map.fetch(map, :token)
-    token
+    Map.fetch!(map, :token)
   end
 
   def get_connection(token) do
