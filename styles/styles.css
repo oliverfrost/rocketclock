@@ -50,16 +50,11 @@ body {
     text-align: left;
 }
 
-#digital {
-    color: white;
-}
-
 #next {
     color: white;
     font-size: 24px;
 
     text-align: right;
-
 }
 
 .title {
@@ -76,11 +71,58 @@ body {
     text-transform: capitalize;
 }
 
+#digital {
+    color: white;
+    justify-content: center;
+}
+
 #time {
     display: block;
+    justify-content: center;
     font-size: 48px;
 }
 
 #weekday {
     display: block;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#hours {
+    position: absolute;
+    top: 21%;
+    left: 48.75%;
+
+    height: 120px;
+    width: 2.5%;
+
+    background-color: white;
+    transform-origin: 50% 100%;
+}
+
+#minutes {
+    background: blue;
+    height: 135px;
+    left: 49%;
+    position: absolute;
+    top: 21%;
+    transform-origin: 50% 100%;
+    width: 2%;
+}
+
+#seconds {
+    background: white;
+    height: 135px;
+    position: absolute;
+    left: 49.5%;
+    top: 21%;
+    width: 1%;
+    z-index: 8;
+    transform-origin: 50% 80%;
 }
