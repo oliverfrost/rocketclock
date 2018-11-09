@@ -8,6 +8,6 @@ defmodule BackendWeb.Router do
   scope "/api", BackendWeb do
     pipe_through :api
 
-    get "/:test", BookController, :index
+    get "/bookings/:room", BookController, :index
   end
 end
