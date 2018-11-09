@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#dashboard {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#name {
+    height: 70px;
+    padding: 15px 0 15px 0;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 56px;
+    font-family: "Lucida Sans Unicode";
+    text-transform: uppercase;
+    color: white;
+}
+
+#clock {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 65px;
+    background-color: white;
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    border: 10px solid red;
+
+    background-color: inherit;
+
+}
+
+#info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#current {
+    color: white;
+    font-size: 24px;
+
+    text-align: left;
+}
+
+#digital {
+    color: white;
+}
+
+#next {
+    color: white;
+    font-size: 24px;
+
+    text-align: right;
+
+}
+
+.title {
+    display: block;
+    text-transform: uppercase;
+}
+
+.title::after {
+    content: ":";
+}
+
+.meeting {
+    display: block;
+    text-transform: capitalize;
+}
+
+#time {
+    display: block;
+    font-size: 48px;
+}
+
+#weekday {
+    display: block;
+}
