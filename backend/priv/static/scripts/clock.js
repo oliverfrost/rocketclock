@@ -6,7 +6,7 @@ class Clock {
     }
 
     start() {
-        this.timer = setInterval(this.updateHandsPosition, 1000);
+        this.timer = setInterval(this.updateHandsPosition, 1);
     }
 
     stop() {

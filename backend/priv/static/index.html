@@ -10,43 +10,60 @@
 <body>
 
 <div id="dashboard">
-    <div id="name">Belgrade Room</div>
-    <div style="text-align:center">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g>
-                <circle r="127"/>
-                <g id="numbers"/>
-                <g id="ticks"/>
-                <g id="hands">
-                    <g id="hour">
-                        <line x1="-6" y1="0" x2="60" y2="0"/>
+    <div id="header">Belgrade Room</div>
+    <div id="content">
+
+        <div id="left">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <circle r="127"/>
+                    <g id="numbers"/>
+                    <g id="ticks"/>
+                    <g id="hands">
+                        <g id="hour">
+                            <line x1="-6" y1="0" x2="60" y2="0"/>
+                        </g>
+                        <g id="minute">
+                            <line x1="-9" y1="0" x2="90" y2="0"/>
+                        </g>
+                        <g id="second">
+                            <line x1="-12" y1="0" x2="120" y2="0"/>
+                        </g>
                     </g>
-                    <g id="minute">
-                        <line x1="-9" y1="0" x2="90" y2="0"/>
-                    </g>
-                    <g id="second">
-                        <line x1="-12" y1="0" x2="120" y2="0"/>
-                    </g>
+                    <circle r="4"/>
+                    <path
+                            d="M0 -140
+        a 140 140 0 0 1 0 280"
+                            fill="none"
+                            stroke="#008000";
+                            stroke-width="20"
+                    />
+                    <path
+                            d="M0 140
+        a 140 140 0 0 1 0 -280"
+                            fill="none"
+                            stroke="#FF0000";
+                            stroke-width="20"
+                    />
                 </g>
-                <circle r="4"/>
-                <path
-                        d="M0 -127
-  a 127 127 0 0 1 0 254"
-                        fill="none"
-                        stroke="#008000";
-                        stroke-width="10"
-                />
-                <path
-                        d="M0 127
-  a 127 127 0 0 1 0 -254"
-                        fill="none"
-                        stroke="#FF0000";
-                        stroke-width="10"
-                />
-            </g>
-        </svg>
+            </svg>
+        </div>
+        <div id="middle">
+            09.30 - 10.00: Sharpfin Scrum</br>
+            10.30 - 11.00: Ruska tupp på EC</br>
+            12.30 - 13.30: Frossa på indiskt
+        </div>
+        <div id="right">
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer-left">
+            Current meeting:</br>
+            Ruska tupp på EC</br>
+        </div>
     </div>
 </div>
+
 
 <script src="scripts/clock.js"></script>
 <script src="scripts/script.js"></script>
